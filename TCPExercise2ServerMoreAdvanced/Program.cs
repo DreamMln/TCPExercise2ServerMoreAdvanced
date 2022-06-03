@@ -38,7 +38,6 @@ namespace TCPExercise2ServerMoreAdvanced
             while (true)
             {
                 TcpClient socket = listener.AcceptTcpClient();
-                HandleClient(socket);
                 //Because TCP holds the connection open,
                 //in order to handle several clients at the same time
                 //it starts a new thread for each client
@@ -75,8 +74,7 @@ namespace TCPExercise2ServerMoreAdvanced
                 writer.WriteLine(message);
                 //skyl ud!
                 writer.Flush();
-                //Close socket, stop the listner
-                socket.Close();
+               
             }
         }
     }
